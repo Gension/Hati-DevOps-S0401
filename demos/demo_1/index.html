@@ -1,0 +1,199 @@
+<!-- DOCTYPE pour préciser la version d'HTML que j'utilise -->
+<!DOCTYPE html>
+
+<!-- Tout le HTML doit ensuite être contenu entre mes balises HTML -->
+<html>
+    <!-- Le HTML à deux grandes parties : 
+        - L'entête : Des infos annexes (meta données) sur le HTML que je vais afficher
+        - Le corps : L'HTML qui sera affiché à l'écran
+    -->
+    <head>
+        <!-- 
+            Dans les headers je peux mettre
+            - style : Appliquer un style "CSS" : La déco de ma page
+            - link : Permet de lier un fichier CSS ou un FAVICON
+            - meta : Des balises pour apporter des informations supplémentaires comme :
+                - l'encodage : "charset"
+                - viewport : reponsivité
+        -->
+
+        <meta charset="UTF-8"> <!-- Balise auto-fermante-->
+        <title>Sherlock Holmes</title> <!-- Permet de choisir le titre de mon document -->
+
+        <!--
+            - title
+            - l'encodage
+            - "des libraries externes" : script qui permet d'écrire ou d'importer du javascript
+            - 
+
+            Liste non exhaustive
+         -->
+    </head>
+    <body> <!-- BODY == CORPS , ce qui s'affiche sur ma page-->
+
+        <h1>Les éléments de base du HTML </h1>
+
+        <h2>Les entêtes/titres (heading)</h2>
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
+
+        <hr> <!-- Une séparation horizontale-->
+        
+        <h2>Paragraphes</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus accusantium tenetur necessitatibus voluptate saepe eveniet pariatur ducimus esse nostrum optio. Quibusdam, placeat nam libero autem vero sequi expedita deleniti quae.
+        </p>
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor deleniti labore vitae dolorum aut dicta animi natus vero pariatur corrupti ipsam, eveniet cum similique, explicabo ducimus odio totam! Quos, vero.
+        </p>
+        
+        <h2>Les images et liens (avec attributs)</h2>
+        <img src="https://i.pinimg.com/280x280_RS/d0/bc/cc/d0bccca895a56d72f9c103a8e2f6d07a.jpg" alt="Photo d'Aurélien" >
+
+        <img src="https://www.erjierhjgorejijgeroijgireojgioerjigeriojgioerjoiger.fr/gerijgiorejgioer.png" alt="Photo avec les prochains chiffres du loto" />
+
+        <a href="page2.html">Lien vers page 2</a>
+        
+        <hr>   
+        <h2>Les listes</h2>
+        <ul> <!-- ul : unordered list - Liste sans ordre précise -->
+            <li>Hey</li>
+            <li>Ho</li>
+            <li>Allo</li>
+        </ul>
+
+        <ol> <!-- ol: ordered list - Liste numérotée -->
+            <li>Truc à faire</li>
+            <li>Autre truc à faire</li>
+        </ol>
+
+        <hr>        
+
+        <h2>Tables</h2>
+        <table>
+            <thead> <!-- l'entete de ma table, l'entête et le corps sont factultatif-->
+                <th>#</th> <!-- th: Table Header -->
+                <th>Nom</th>
+            </thead>
+            <tbody> <!-- le corps de mon tableau -->
+                <tr> <!-- tr : table row -->
+                    <td>1</td> <!-- td : table data (table cell/une cellule de mon tableau)-->
+                    <td>Bob</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Bob</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <hr>
+        <h2>Formulaires</h2>
+        <form action="index.html" method="POST"  > <!-- Formulaire : de saisir des informations et les envoyer au serveur, soit de les récupérer en JS -->
+            <fieldset>
+                <legend>Information de contact</legend>
+                <label for="idc_email" >Email:</label>
+                <input type="email" id="idc_email" name="email">
+
+                <label for="idc_phone" >Téléphone:</label>
+                <input type="tel" id="idc_phone" name="phone">
+
+                <input type="submit" value="Soumettre mon formulaire">
+            </fieldset>
+        </form>
+
+
+        <form method="GET">
+            <fieldset>
+                <legend>Rechercher</legend>
+                <label for="search" >Rechercher:</label>
+                <input type="text" id="search" name="q">
+
+                <input type="submit" value="🔍">
+            </fieldset>
+        </form>
+        <hr>
+
+
+        <h2>IFrame (ou page dans une page)</h2>
+        <iframe src="https://oclock.io"></iframe>
+
+
+        <hr>
+
+        <div> <!-- L'élément générique "fourre tout" -->
+            Je suis un div avec <span style="color: red;">un span.</span>
+        </div>
+        <div>
+            Se mettre à la ligne
+        </div>
+
+        <hr>
+
+        <h2>HTML Sémantique (depuis HTML5) </h2>
+        <p>Le HTML5 a introduit des balises sémantiques pour permettre aux développeurs et intégrateurs d'apporter et décrire le type de contenu au sein de chaque élément de façon plus clair. Ils fournissent du contexte pour les navigateurs, les bots des moteurs de recherche mais également dans le cadre de l'accessibilité : i.e. liseuses et navigateurs braille</p>
+        <header> <!-- Indique la partie "entête visuel" de ma page-->
+            <nav> <!-- Indique que les composants enfant servent à la navigation-->
+                <a href="index.html">Home</a>
+                <a href="about.html">A Propos</a>
+            </nav>
+        </header>
+
+        <main> <!-- La ou se trouve le contenu principal de ma page-->
+            <article> <!-- Représente une composition complete d'un element. Par ex: document, blog post, article de presse etc. -->
+
+                <figure> <!-- Spécifier du contenu tel qu'une illustration, digramme ou photo-->
+                    <img src="https://theengineeringmanager.com/wp-content/uploads/2017/12/20111228.gif">
+                    <figcaption>La courbe d'apprentissage d'une compétence</figcaption>
+                </figure>
+                <time></time> <!-- D'indiquer qu'on affiche une heure -->
+                Dans un text <mark>que l'on veut surligner</mark>
+
+                <summary> <!-- J'affiche un contenu qui est un résumé-->
+
+                </summary>
+
+                <details> <!-- Je suis les détails de quelque chose-->
+
+                </details>
+
+                <meter min="1" max="5" value="3"></meter>
+                <progress min="0" max="100" value="42"></progress>
+                <code>
+                    package main
+
+                    import "fmt"
+                    
+                    func main() {
+                        a, b := 0, 1
+                        fmt.Println("Fibonacci sequence:")
+                        for i := 0; i < 10; i++ {
+                            fmt.Println(a)
+                            a, b = b, a+b
+                        }
+                    }
+                </code>
+                <var></var> <!-- Représenter une équation mathématique-->
+            </article>
+
+        </main>
+        <aside> <!-- Contenu "a coté" du contenu principal-->
+
+        </aside>
+
+        <footer> <!-- Pied page-->
+
+        </footer>
+
+
+        <section>
+            d'assault
+        </section>
+
+        
+    </body>
+</html>
